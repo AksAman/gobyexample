@@ -31,6 +31,7 @@ func main() {
 	// workerpools.RunWorkers()
 
 	// sync_examples.RunWithWaitGroups()
-	sync_examples.RunAtomicCounter()
+	// sync_examples.RunAtomicCounter()
+	sync_examples.RunMutexExample()
 
 }

@@ -15,13 +15,13 @@ const ITERATIONS = 1000
 
 func RunAtomicCounter() {
 	start := time.Now()
-	withoutAtomic := runWithoutAtomic()
+	withoutAtomic := run(false)
 	nonAtomicTook := time.Since(start)
 	fmt.Printf("withoutAtomic: %v\n", withoutAtomic)
 	// fmt.Printf("took %v\n", nonAtomicTook)
 
 	start = time.Now()
-	withAtomic := runWithAtomic()
+	withAtomic := run(true)
 	atomicTook := time.Since(start)
 	fmt.Printf("withAtomic: %v\n", withAtomic)
 	// fmt.Printf("took %v\n", atomicTook)
@@ -29,10 +29,17 @@ func RunAtomicCounter() {
 	fmt.Printf("(atomicTook / nonAtomicTook): %d\n", (atomicTook / nonAtomicTook))
 }
 
-func runWithoutAtomic() uint64 {
+func run(isAtomic bool) uint64 {
 	// unsigned integer (always positive)
 	var counter uint64
 	var wg sync.WaitGroup
+	var incrementer func(*uint64)
+
+	if isAtomic {
+		incrementer = atomicIncrementer
+	} else {
+		incrementer = nonAtomicIncrementer
+	}
 
 	for i := 0; i < N_WORKERS; i++ {
 		wg.Add(1)
@@ -41,7 +48,7 @@ func runWithoutAtomic() uint64 {
 			defer wg.Done()
 
 			for i := 0; i < ITERATIONS; i++ {
-				counter++
+				incrementer(&counter)
 			}
 		}()
 	}
@@ -50,23 +57,10 @@ func runWithoutAtomic() uint64 {
 	return counter
 }
 
-func runWithAtomic() uint64 {
-	// unsigned integer (always positive)
-	var counter uint64
-	var wg sync.WaitGroup
+func atomicIncrementer(counter *uint64) {
+	atomic.AddUint64(counter, 1)
+}
 
-	for i := 0; i < N_WORKERS; i++ {
-		wg.Add(1)
-
-		go func() {
-			defer wg.Done()
-
-			for i := 0; i < ITERATIONS; i++ {
-				atomic.AddUint64(&counter, 1)
-			}
-		}()
-	}
-	wg.Wait()
-
-	return counter
+func nonAtomicIncrementer(counter *uint64) {
+	*counter++
 }
