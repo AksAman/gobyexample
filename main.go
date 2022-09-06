@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/AksAman/gobyexample/timemachine"
+	"github.com/AksAman/gobyexample/sync_examples"
 )
 
 func main() {
@@ -25,10 +25,12 @@ func main() {
 	// timemachine.RunTimeOutExample()
 	// timemachine.RunTimers()
 	// timemachine.RunTickers()
-	timemachine.RunRateLimiting()
+	// timemachine.RunRateLimiting()
 	// timemachine.RunRateLimiting2()
 
 	// workerpools.RunWorkers()
+
 	// sync_examples.RunWithWaitGroups()
+	sync_examples.RunAtomicCounter()
 
 }
