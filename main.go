@@ -1,6 +1,6 @@
 package main
 
-import "github.com/AksAman/gobyexample/regexes"
+import jsonExamples "github.com/AksAman/gobyexample/jsonexamples"
 
 func main() {
 	// structembeds.Run()
@@ -41,5 +41,7 @@ func main() {
 
 	// templates.Run()
 
-	regexes.Run()
+	// regexes.Run()
+
+	jsonExamples.Run()
 }
