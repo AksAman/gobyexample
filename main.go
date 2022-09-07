@@ -1,6 +1,8 @@
 package main
 
-import "github.com/AksAman/gobyexample/sync_examples"
+import (
+	"github.com/AksAman/gobyexample/sorting"
+)
 
 func main() {
 	// structembeds.Run()
@@ -31,5 +33,8 @@ func main() {
 	// sync_examples.RunWithWaitGroups()
 	// sync_examples.RunAtomicCounter()
 	// sync_examples.RunMutexExample()
-	sync_examples.RunStatefulGoroutinesExample()
+	// sync_examples.RunStatefulGoroutinesExample()
+
+	sorting.RunSorting()
+	sorting.RunSortingFunctions()
 }
