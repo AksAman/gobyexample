@@ -1,13 +1,14 @@
 package main
 
-import (
-	"github.com/AksAman/gobyexample/sorting"
-)
+import "github.com/AksAman/gobyexample/templates"
 
 func main() {
 	// structembeds.Run()
+
 	// generics.Run()
+
 	// errorhandling.Run()
+	// errorhandling.RunRecoveryExample()
 
 	// goroutines.Run()
 	// goroutines.RunInBackground()
@@ -35,6 +36,8 @@ func main() {
 	// sync_examples.RunMutexExample()
 	// sync_examples.RunStatefulGoroutinesExample()
 
-	sorting.RunSorting()
-	sorting.RunSortingFunctions()
+	// sorting.RunSorting()
+	// sorting.RunSortingFunctions()
+
+	templates.Run()
 }

@@ -2,6 +2,7 @@ package channels
 
 import (
 	"fmt"
+	"time"
 )
 
 func jobworker(jobs *chan string, done *chan bool) {
@@ -9,7 +10,7 @@ func jobworker(jobs *chan string, done *chan bool) {
 		// receives jobs from jobs channel
 		job, more := <-*jobs
 		if more {
-			// time.Sleep(time.Second)
+			time.Sleep(time.Second)
 			fmt.Printf("job rcvd: %v\n", job)
 		} else {
 			*done <- true

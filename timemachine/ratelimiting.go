@@ -46,12 +46,13 @@ func runBurstyLimiter() {
 	fmt.Println("---- Running Bursty Rate Limiter with interval: ", INTERVAL)
 
 	burstCount := 5
-	n_requests := N_REQUESTS * burstCount
+	nRequests := N_REQUESTS * burstCount
+
 	// create rate limiter instance
 	if rateLimiter, err := NewBurstyRateLimiter(INTERVAL, burstCount); err != nil {
 		fmt.Printf("err: %v\n", err)
 	} else {
-		sendAndReceiveRequests(n_requests, rateLimiter)
+		sendAndReceiveRequests(nRequests, rateLimiter)
 	}
 
 }
