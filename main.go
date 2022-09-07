@@ -1,6 +1,6 @@
 package main
 
-import "github.com/AksAman/gobyexample/templates"
+import "github.com/AksAman/gobyexample/regexes"
 
 func main() {
 	// structembeds.Run()
@@ -39,5 +39,7 @@ func main() {
 	// sorting.RunSorting()
 	// sorting.RunSortingFunctions()
 
-	templates.Run()
+	// templates.Run()
+
+	regexes.Run()
 }
