@@ -1,7 +1,5 @@
 package main
 
-import "github.com/AksAman/gobyexample/processes"
-
 func main() {
 	// structembeds.Run()
 
@@ -55,5 +53,5 @@ func main() {
 	// httpclients.Run()
 	// httpservers.Run()
 
-	processes.Run()
+	// processes.Run()
 }
