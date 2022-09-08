@@ -9,7 +9,7 @@ func Title(s string) {
 }
 
 func Run() {
-	// runSpawningExamples()
-	// runSysCallExample()
+	runSpawningExamples()
+	runSysCallExample()
 	runSignalsExample()
 }
