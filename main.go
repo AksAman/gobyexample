@@ -1,5 +1,7 @@
 package main
 
+import "github.com/AksAman/gobyexample/embed_directive"
+
 func main() {
 	// structembeds.Run()
 
@@ -48,4 +50,5 @@ func main() {
 	// files.RunReadExample()
 	// files.RunWriteExample()
 
+	embed_directive.Run()
 }
