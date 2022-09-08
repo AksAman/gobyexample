@@ -1,9 +1,5 @@
 package main
 
-import (
-	"github.com/AksAman/gobyexample/urlparsing"
-)
-
 func main() {
 	// structembeds.Run()
 
@@ -47,5 +43,9 @@ func main() {
 
 	// jsonExamples.Run()
 
-	urlparsing.Run()
+	// urlparsing.Run()
+
+	// files.RunReadExample()
+	// files.RunWriteExample()
+
 }
