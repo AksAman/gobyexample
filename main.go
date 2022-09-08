@@ -1,5 +1,9 @@
 package main
 
+import (
+	"github.com/AksAman/gobyexample/webdev/httpservers"
+)
+
 func main() {
 	// structembeds.Run()
 
@@ -49,5 +53,5 @@ func main() {
 	// files.RunWriteExample()
 
 	// embed_directive.Run()
-
+	httpservers.Run()
 }
