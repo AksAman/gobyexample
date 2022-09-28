@@ -1,5 +1,7 @@
 package main
 
+import "github.com/AksAman/gobyexample/interfaces"
+
 func main() {
 	// structembeds.Run()
 
@@ -54,4 +56,6 @@ func main() {
 	// httpservers.Run()
 
 	// processes.Run()
+
+	interfaces.Run()
 }
